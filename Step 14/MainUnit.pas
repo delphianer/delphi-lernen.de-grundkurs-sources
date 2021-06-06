@@ -16,15 +16,12 @@ type
     BtnColorTags: TButton;
     ReText_Bsp2: TRichEdit;
     BtnColorTags2: TButton;
-    ReText_Bsp3: TRichEdit;
-    Label1: TLabel;
     procedure BtnBeispiel1Click(Sender: TObject);
     procedure BtnBeispiel2Click(Sender: TObject);
     procedure btnCallByValueClick(Sender: TObject);
     procedure btnCallByReferenceClick(Sender: TObject);
     procedure BtnColorTagsClick(Sender: TObject);
     procedure BtnColorTags2Click(Sender: TObject);
-    procedure ReText_Bsp3Change(Sender: TObject);
   private
     { Private-Deklarationen }
     procedure ColorTags(reTextField : TRichEdit; tagBeginSymbol,
@@ -313,31 +310,6 @@ begin
   until (startPosition<1) or (startPosition=endPosition);
 end;
 
-
-
-// Beispiel 5: ColorTags (Teil 3)
-procedure TMainForm.ReText_Bsp3Change( Sender: TObject);
-var
-  // hier brauchen wir als Zusatz die "Cursor-Position", da wir beim Ändern des
-  // Styles den Cursor auf die letzte Position setzen.
-  selStart, selLength : Integer;
-begin
-  // wir merken uns, was die aktuelle Position bzw. Markierung ist:
-  selStart  := ReText_Bsp3.SelStart;
-  selLength := ReText_Bsp3.SelLength;
-  // damit es nicht flackert, gibt es zwei hacks:
-  // der eine ist, mehr Speicher:
-  DoubleBuffered := true;
-  // der Andere: Kurz verstecken:
-  ReText_Bsp3.visible := false;
-  // Ändern ggf. die Farbe :
-  ColorTags(ReText_Bsp3, '<', '>', clGreen);
-  // und zum Schluss, setzen wir wieder die aktuelle Position:
-  ReText_Bsp3.visible := true;
-  ReText_Bsp3.SetFocus;
-  ReText_Bsp3.SelStart := selStart;
-  ReText_Bsp3.SelLength := selLength;
-end;
 
 
 end.
