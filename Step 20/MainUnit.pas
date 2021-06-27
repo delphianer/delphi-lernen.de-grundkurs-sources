@@ -7,15 +7,15 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm1 = class( TForm)
-    Button1: TButton;
-    Edit1: TEdit;
-    Button2: TButton;
-    edOriginal: TEdit;
-    edCoded: TEdit;
-    edMove: TEdit;
-    procedure Button1Click( Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+  TMainForm = class( TForm)
+    EdPassword: TEdit;
+    BtnVigenere: TButton;
+    edEingabe: TEdit;
+    edAusgabe: TEdit;
+    Label1: TLabel;
+    rbCodieren: TRadioButton;
+    rbDecodieren: TRadioButton;
+    procedure BtnVigenereClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -23,47 +23,24 @@ type
   end;
 
 var
-  Form1: TForm1;
+  MainForm: TMainForm;
 
 implementation
 
 uses
-  mCaesarFuerTest1, mCaesar;
+  mVigenere;
 
 {$R *.dfm}
 
-procedure TForm1.Button1Click( Sender: TObject);
+procedure TMainForm.BtnVigenereClick(Sender: TObject);
 var
-  // Deklaration Caesar:
-  caesar : TCaesarFuerTest1;
+  vigenere : TVigenere;
 begin
-  // instanziieren:
-  caesar := TCaesarFuerTest1.Create;
-  // Anschließend können wir die "Eingabe" mit in der "Ausgabe" in
-  // einer Zeile abbilden:
-  Edit1.Text := caesar.DeCode( 'Hallo ziemlich kleines Beispiel', 1);
-  // Jedes Objekt, das wir erstellen, müssen wir auch wieder aus dem
-  // Speicher entfernen. Dafür gibt es die Methode "Free".
-  caesar.Free;
-end;
-
-procedure TForm1.Button2Click(Sender: TObject);
-var
-  // Deklaration
-  caesar : TCaesar;
-  // move soll die Anzahl an Verschiebungen in umgewandler Weise speichern.
-  move : Integer;
-begin
-  caesar := TCaesar.Create;
+  vigenere := TVigenere.Create(EdPassword.Text);
   try
-    // edMove ist das Eingabefeld für die Anzahl an Verschiebungen.
-    move := StrToInt( edMove.Text);
-    // edOriginal beinhaltet den Text, der codiert werden soll.
-    // edCoded wird den codierten Inhalt ausgeben
-    edCoded.Text := caesar.DeCode( edOriginal.Text, move);
+    edAusgabe.Text := vigenere.DeCode( edEingabe.Text, rbCodieren.Checked);
   finally
-    // Und am Ende, das Objekt
-    caesar.Free;
+    vigenere.Free;
   end;
 end;
 

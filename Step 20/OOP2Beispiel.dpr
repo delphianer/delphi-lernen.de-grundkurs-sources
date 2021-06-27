@@ -2,7 +2,7 @@ program OOP2Beispiel;
 
 uses
   Vcl.Forms,
-  MainUnit in 'MainUnit.pas' {Form1},
+  MainUnit in 'MainUnit.pas' {MainForm},
   mCaesarFuerTest1 in 'mCaesarFuerTest1.pas',
   mVigenere in 'mVigenere.pas';
 
@@ -11,6 +11,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TMainForm, MainForm);
   Application.Run;
 end.
