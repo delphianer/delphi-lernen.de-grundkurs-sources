@@ -9,7 +9,7 @@ uses
 type
   TICQKontakt = record
     Nick : String[10]; // die Zahl in den Eckigen Klammern gibt
-    Vorname : String[25]; // die maximale Grˆﬂe des "Strings" an!
+    Vorname : String[25]; // die maximale Gr√∂√üe des "Strings" an!
     Nachname : String[25];
     UIN : Integer;
   end;
@@ -72,7 +72,7 @@ implementation
 
 {$R *.dfm}
 
-{ Click-Procedure des Buttons, der die Eingaben ¸bernehmen soll: }
+{ Click-Procedure des Buttons, der die Eingaben √ºbernehmen soll: }
 
 
 procedure TForm1.BtnPostClick(Sender: TObject);
@@ -143,7 +143,7 @@ begin
   // nun schreiben wir unser Kontaktbuch in die Datei
   Write(f,ICQKontaktBuch);
 
-  // und zu guter Letzt, schlieﬂen wir den Zeiger auf die Datei, so dass ggf.
+  // und zu guter Letzt, schlie√üen wir den Zeiger auf die Datei, so dass ggf.
   // jemand Anderes darauf zugreifen kann :)
   CloseFile(f);
 end;
@@ -162,7 +162,7 @@ begin
   // Und jetzt lesen wir unser Kontaktbuch aus der Datei
   Read(f,ICQKontaktBuch);
 
-  // Wie oben, alles wieder schlieﬂen
+  // Wie oben, alles wieder schlie√üen
   CloseFile(f);
 end;
 

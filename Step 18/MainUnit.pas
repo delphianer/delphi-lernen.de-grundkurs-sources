@@ -41,7 +41,7 @@ var
 
 begin
   // da ein dynamisches Array Null-basierend ist,
-  // fangen wir bei 0 an und zählen insgesammt bis zum vorletzten
+  // fangen wir bei 0 an und zÃ¤hlen insgesammt bis zum vorletzten
   for i:=0 to high(zeilen)-1 do
     for k:=i+1 to high(zeilen) do
       if zeilen[i]>zeilen[k] then
@@ -56,7 +56,7 @@ var
 begin
   // Text aus Memo "konvertieren" in klassisches Array:
   // so kann der Algorithmus oben klassisch mit dem Array bleiben
-  // Denkbare Alternative wäre, dass wir Bubble mit "TStrings"
+  // Denkbare Alternative wÃ¤re, dass wir Bubble mit "TStrings"
   // statt Array schreiben und entsprechend behandeln
   for i := 0 to mmZeilen.Lines.Count-1 do
   begin
@@ -67,7 +67,7 @@ begin
   // aufruf des Algorithmus:
   Bubble(strArr);
 
-  //  Zurückschreiben:
+  //  ZurÃ¼ckschreiben:
   for i := 0 to high(strArr) do
     mmZeilen.Lines.Strings[ i] := strArr[ i];
 

@@ -80,9 +80,9 @@ begin
   b := ((i+k) = 20) AND ((i-k) > k);
 
   if not b then
-    ShowMessage('Die Bedingung mit der UND-Verknüpfung ist "false"')
+    ShowMessage('Die Bedingung mit der UND-VerknÃ¼pfung ist "false"')
   else
-    ShowMessage('Die Bedingung mit der UND-Verknüpfung ist "true"');
+    ShowMessage('Die Bedingung mit der UND-VerknÃ¼pfung ist "true"');
 
 
   // ein bisschen trickreicher! -> kleine Aufgabe:

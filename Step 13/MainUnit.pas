@@ -37,7 +37,7 @@ begin
 
   // Erster Teil: Repeat ... Until:
 
-  mmRepeatUntil.Lines.Clear; // Alles was drin steht löschen
+  mmRepeatUntil.Lines.Clear; // Alles was drin steht lÃ¶schen
 
   i := 10; // Initialisierung von i
   repeat
@@ -50,7 +50,7 @@ begin
 
   // Erster Teil: While:
 
-  mmWhile.Lines.Clear; // Alles was drin steht löschen
+  mmWhile.Lines.Clear; // Alles was drin steht lÃ¶schen
 
   i := 10; // Erneute Initialisierung von i
   while i > 0 do

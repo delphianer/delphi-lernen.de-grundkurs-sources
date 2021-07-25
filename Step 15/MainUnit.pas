@@ -69,23 +69,23 @@ begin
 
       ShowMessage('Division durch 0!?! Exception-Meldung:' + ex.Message);
 
-    on ex:EIntOverflow do         // bei Integer ‹berlauf
+    on ex:EIntOverflow do         // bei Integer √úberlauf
 
-      ShowMessage('Integer ¸berlauf!?! Exception-Meldung:' + ex.Message);
+      ShowMessage('Integer √úberlauf!?! Exception-Meldung:' + ex.Message);
 
     on ex:EIntfCastError do       // bei einem Casting-Ausnahmen
 
       ShowMessage('Integer Cast Fehler?!? Exception-Meldung:' + ex.Message);
 
-    // ... die Aufz‰hlung kann beliebig erweitert werden ...
+    // ... die Aufz√§hlung kann beliebig erweitert werden ...
 
     on ex:Exception do               // bei allen anderen Ausnahmen
 
-      // alternativ, falls wir auf ex nicht zugreifen kˆnnen m¸ssen,
-      // kˆnnen wir f¸r "alle anderen Ausnahmen" auch "else" verwenden,
+      // alternativ, falls wir auf ex nicht zugreifen k√∂nnen m√ºssen,
+      // k√∂nnen wir f√ºr "alle anderen Ausnahmen" auch "else" verwenden,
       // wie bei der if-Anweisung
 
-      // Mehr als eine Zeile? => Umschlieﬂe mit begin...end;
+      // Mehr als eine Zeile? => Umschlie√üe mit begin...end;
       begin
         msg := 'Unbekannter Fehler:' + ex.ClassName + sLineBreak;
         msg := msg + 'a = ' + IntToStr(b) + sLineBreak;

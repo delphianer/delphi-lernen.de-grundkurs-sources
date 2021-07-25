@@ -71,7 +71,7 @@ begin
       else
         coded := coded + codedChr;
     end
-    else // keine codierung durchgeführt:
+    else // keine codierung durchgefÃ¼hrt:
     begin
       coded := coded + originalChr;
     end;

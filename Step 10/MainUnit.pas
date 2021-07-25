@@ -73,7 +73,7 @@ var
 begin
   cl := Blue;
 
-  // Auch Kurzschreibform ist möglich:
+  // Auch Kurzschreibform ist mÃ¼glich:
   case cl of
     Red : showMessage('Red');
     Green : showMessage('Green');

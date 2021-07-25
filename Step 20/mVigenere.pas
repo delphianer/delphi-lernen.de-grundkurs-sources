@@ -44,23 +44,23 @@ begin
     indexOrig:=0;
     indexPw:=0;
     coded:='';
-    while indexOrig < Length(orig) do // W‰hrend noch Buchstaben zu bearbeiten sind
+    while indexOrig < Length(orig) do // W√§hrend noch Buchstaben zu bearbeiten sind
     begin
-        Inc(indexOrig); // n‰chsten Buchstaben behandeln
-        Inc(indexPw);   // Passwortindex um eins erhˆhen
-        // Wenn Passwortindex grˆﬂer als L‰nge des Passwortes
+        Inc(indexOrig); // n√§chsten Buchstaben behandeln
+        Inc(indexPw);   // Passwortindex um eins erh√∂hen
+        // Wenn Passwortindex gr√∂√üer als L√§nge des Passwortes
         if indexPw > Length(fPassword) then
-            // Passwortindex auf 1 zur¸cksetzen
+            // Passwortindex auf 1 zur√ºcksetzen
             indexPw := 1;
         // Buchstabe des Passwortes in ASCII-Zahl codieren und ord('a') abziehen
-        // hierbei resuliert f¸r z.B. fPassword[indexPW]='a'  move = 0;
+        // hierbei resuliert f√ºr z.B. fPassword[indexPW]='a'  move = 0;
         move := ord(fPassword[indexPw])-97;
         if decode then          // wenn decodiert werden soll
-            move := 26-move;    // dann move umdrehen -> R¸ckw‰rts verschieben
-        // Funktion der Klasse TCaesar mit aktulellem Buchstaben bei indexOrig ausf¸hren
+            move := 26-move;    // dann move umdrehen -> R√ºckw√§rts verschieben
+        // Funktion der Klasse TCaesar mit aktulellem Buchstaben bei indexOrig ausf√ºhren
         coded := coded + inherited DeCode(orig[indexOrig],move);
     end;
-    // codierten String zur¸ckgeben
+    // codierten String zur√ºckgeben
     result:=coded;
 end;
 

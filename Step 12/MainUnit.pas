@@ -46,7 +46,7 @@ begin
     ergebnis := ergebnis + 1;
   end;
 
-  // ShowMessage('Lösung: '+ (IntToStr(ergebnis)) + ' Rest: '+(FloatToStr(divident)));
+  // ShowMessage('LÃ¶sung: '+ (IntToStr(ergebnis)) + ' Rest: '+(FloatToStr(divident)));
   // Statt ShowMessage, geben wir das Ergebnis im Formular aus :)
   EdErgebnis.Text := IntToStr(ergebnis) + ' Rest: ' + FloatToStr(dividend);
 end;

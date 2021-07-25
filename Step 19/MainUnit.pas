@@ -39,11 +39,11 @@ var
 begin
   // instanziieren:
   caesar := TCaesarFuerTest1.Create;
-  // Anschließend können wir die "Eingabe" mit in der "Ausgabe" in
+  // AnschlieÃŸend kÃ¶nnen wir die "Eingabe" mit in der "Ausgabe" in
   // einer Zeile abbilden:
   Edit1.Text := caesar.DeCode( 'Hallo ziemlich kleines Beispiel', 1);
-  // Jedes Objekt, das wir erstellen, müssen wir auch wieder aus dem
-  // Speicher entfernen. Dafür gibt es die Methode "Free".
+  // Jedes Objekt, das wir erstellen, mÃ¼ssen wir auch wieder aus dem
+  // Speicher entfernen. DafÃ¼r gibt es die Methode "Free".
   caesar.Free;
 end;
 
@@ -56,7 +56,7 @@ var
 begin
   caesar := TCaesar.Create;
   try
-    // edMove ist das Eingabefeld für die Anzahl an Verschiebungen.
+    // edMove ist das Eingabefeld fÃ¼r die Anzahl an Verschiebungen.
     move := StrToInt( edMove.Text);
     // edOriginal beinhaltet den Text, der codiert werden soll.
     // edCoded wird den codierten Inhalt ausgeben

@@ -33,6 +33,9 @@ begin
 end;
 
 
+// function that adds all letters from a to z into an array
+function TCaesar.getAlphabetAsArray()
+
 
 function TCaesar.DeCode( orig : String; move : Integer) : String;
 var
@@ -71,7 +74,7 @@ begin
       else
         coded := coded + codedChr;
     end
-    else // keine codierung durchgeführt:
+    else // keine codierung durchgefÃ¼hrt:
     begin
       coded := coded + originalChr;
     end;

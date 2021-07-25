@@ -141,7 +141,7 @@ var
   int1, int2 : Integer;
 begin
   int2:=0;
-  int1 := getBothValA(int2);     // Aufruf und anschließende Ausgabe
+  int1 := getBothValA(int2);     // Aufruf und anschlieÃŸende Ausgabe
   ShowMessage( IntToStr( int1));
   ShowMessage( IntToStr( int2));
 end;
@@ -155,7 +155,7 @@ var
   int1, int2 : Integer;
 begin
   int2:=0;
-  int1 := getBothValB(int2);     // Aufruf und anschließende Ausgabe
+  int1 := getBothValB(int2);     // Aufruf und anschlieÃŸende Ausgabe
   ShowMessage( IntToStr( int1));
   ShowMessage( IntToStr( int2));
 end;
@@ -184,24 +184,24 @@ var
   end;
 
   // Da PaintIt nur in dieser Procedure (und das 3 mal) aufgerufen wird, und da
-  // man beim Programmieren immer so lokal wie möglich programmieren sollte,
+  // man beim Programmieren immer so lokal wie mÃ¶glich programmieren sollte,
   // sollte diese Procedure auch nur hier stehen.
 
-  // Grundsatz: So global wie nötig, so lokal wie möglich!
+  // Grundsatz: So global wie nÃ¶tig, so lokal wie mÃ¶glich!
 
 begin
   // hier initialisieren wir mal ganz einfach die wichtigen Zeichen:
   tagBeginSymbol := '<';
   tagEndSymbol := '>';
   Col := clRed;
-  // ReText ist ein RichEdit-Element. Dieses und ein Button genügen für
-  // dieses Beispiel als Test der späteren "ColorTags"-Funktion ;)
+  // ReText ist ein RichEdit-Element. Dieses und ein Button genÃ¼gen fÃ¼r
+  // dieses Beispiel als Test der spÃ¤teren "ColorTags"-Funktion ;)
   sourceCode := ReText.Text;
-  // Zeichenumbrüche können hier gemein werden - sie werden "doppelt" gezählt
+  // ZeichenumbrÃ¼che kÃ¶nnen hier gemein werden - sie werden "doppelt" gezÃ¤hlt
   // da sie ein Zusammenschluss von Zwei zeichen sind, aber nur als ein Zeichen
-  // dargestellt werden - hier ein kleiner Fix für die weitere Behandlung:
+  // dargestellt werden - hier ein kleiner Fix fÃ¼r die weitere Behandlung:
   if ReText.Lines.LineBreak = AnsiString(#13#10) then
-    sourceCode := stringreplace( sourceCode, ReText.Lines.LineBreak, '§',
+    sourceCode := stringreplace( sourceCode, ReText.Lines.LineBreak, 'Â§',
                                  [rfReplaceAll, rfIgnoreCase]);
 
   lastPosition := 0;
@@ -217,7 +217,7 @@ begin
       break; // repeat..until verlassen
     end;
 
-    // Start ist nach dem Ende?! => Abbruch durchführen, da ist was "komisch"...
+    // Start ist nach dem Ende?! => Abbruch durchfÃ¼hren, da ist was "komisch"...
     if (startPosition > endPosition) then
     begin
       break;
@@ -232,10 +232,10 @@ begin
                         lengthOfText);
     lastPosition := lastPosition + endPosition;
 
-    // Falls die Methode lange läuft, sorgt folgende Zeile dafür,
+    // Falls die Methode lange lÃ¶uft, sorgt folgende Zeile dafÃ¼r,
     // dass die Anwendung nicht "einfriert".
     Application.ProcessMessages;
-    // Es genügt, die Zeile "sourceCode := copy..." auszukomentieren um
+    // Es genÃ¼gt, die Zeile "sourceCode := copy..." auszukomentieren um
     // Application.ProcessMessages in Aktion zu sehen.
     // Wer App... auch noch auskommentiert, sieht was "einfrieren" bedeutet :)
 
@@ -272,12 +272,12 @@ var
   end;
 
 begin
-  // Eine Änderung: die TagBegin-, TagEndSymbole und die Farbe sind per
-  // Parameter übergeben. Das ermöglicht es, dass die "Einstellungen" wo
-  // anders herkommen können.
+  // Eine Ã„nderung: die TagBegin-, TagEndSymbole und die Farbe sind per
+  // Parameter Ã¼bergeben. Das ermÃ¶glicht es, dass die "Einstellungen" wo
+  // anders herkommen kÃ¶nnen.
   sourceCode := reTextField.Text;
   if reTextField.Lines.LineBreak = AnsiString(#13#10) then
-    sourceCode := stringreplace( sourceCode, reTextField.Lines.LineBreak, '§',
+    sourceCode := stringreplace( sourceCode, reTextField.Lines.LineBreak, 'Â§',
                                  [rfReplaceAll, rfIgnoreCase]);
 
   lastPosition := 0;

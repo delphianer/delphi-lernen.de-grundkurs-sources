@@ -28,7 +28,7 @@ type
 
 var                           // Hier werden sog. "globale" Variablen deklariert
   Form1: TForm1;
-  myArray : Array of Integer; // myArray ist hierdurch überall nutzbar
+  myArray : Array of Integer; // myArray ist hierdurch Ã¼berall nutzbar
                               // wie es in der Procedure "initMyArray"
                               // im zweiten Beispiel genutzt wird.
 
